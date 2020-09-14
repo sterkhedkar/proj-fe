@@ -1,0 +1,47 @@
+.subDashboard{
+    overflow: auto;
+    /* padding-top: 5.2rem; */
+}
+.mainDiv{
+    display: flex;
+}
+.mobileV{
+    padding-top: 11.2rem !important;
+}
+.interventionsDiv{
+    width: 2%;
+    height: 83vh;
+    padding: 4px;
+    margin-top: 19px;
+    margin-right: 5px;
+    position: fixed;
+    right: 0;
+    background: rgba(196, 196, 196, 0.3);
+    border-radius: 8px;
+    transform: translateX(-3%);
+    transition: width 0.3s;
+}
+.interventionChange{
+    width: 23%;
+    transform: translateX(0);
+}
+.interventionCount{
+    display: block;
+}
+.display{
+    display: none;
+}
+.interventionCount{
+    background: #CF1004;
+    border-radius: 50%;
+    font-size: 13px;
+    border: 1px solid #CF1004;
+    color: #ffffff;
+    position: relative;
+    top: -6px;
+    left: -11px;
+    text-align: center;
+}
+.interventionDetail{
+    display: flex;
+}

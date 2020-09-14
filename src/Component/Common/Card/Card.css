@@ -1,0 +1,91 @@
+html { font-size: 22px; }
+body { padding: 1rem; }
+.cardHead{
+    display: flex;
+}
+h5{
+    margin: 0 !important;
+    color: #808080;
+    width: 90%;
+}
+.card {
+    padding: 1rem;
+    /* border: 3px solid #D8DFF3; */
+    background: #FFFFFF;
+    box-shadow: 0px 5px 15px rgba(76, 77, 76, 0.2);
+    border-radius: 10px;
+}
+.small {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.medium {
+    grid-column: span 3;
+    grid-row: span 2;
+}
+
+.large {
+    grid-column: span 7;
+    grid-row: span 2;
+}
+
+.superlarge{
+    grid-column: span 10;
+    grid-row: span 2;
+}
+
+.scroll{
+    height: 4rem;
+    margin: 8px 0 0;
+}
+.chart{
+    margin-top: 10px;
+    /* position: relative;
+    height: 22vh;
+    width: 11vw; */
+}
+.small .chart{
+    height: 7rem;
+}
+.large .chart, .medium .chart, .superlarge .chart{
+    height: 23rem;
+}
+.progressLine{
+    line-height: 1.5;
+}
+.keyMatrixEnable{
+    display: flex;
+    align-items: center;
+    color: #4C4D4C;
+    justify-content: center;
+    align-items: center;
+}
+.keyMatrixDisble{
+    display: flex;
+    align-items: center;
+    color: #ADAAAA;
+    justify-content: center;
+    align-items: center;
+}
+/* .keyMatrixEnable label, .keyMatrixDisble label{
+    margin:0;
+} */
+.keyMatrixLabel{
+    font-size: 30px;
+    margin: 0 10px;
+}
+.green{
+    color: #34B53A;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;    
+    margin-left: 5px;
+}
+.gray{
+    color: #ADAAAA;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    margin-left: 5px;
+}

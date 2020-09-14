@@ -1,0 +1,29 @@
+.chartDiv{
+    width: 98%;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    transition: width 0.3s;
+}
+.widthChange{
+    width: 75% !important;
+    transition: width 0.3s;
+}
+.chartDivMob{
+    width: 100%;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    margin-bottom: 4rem;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-auto-rows: 1fr;
+    grid-gap: 17px;
+    padding: 17px;
+    margin-top: 10px;
+}
+
+

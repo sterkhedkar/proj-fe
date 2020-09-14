@@ -1,0 +1,96 @@
+
+.filterDiv{
+    /* position: fixed; */
+    background: #fbffff !important;
+    width: 100%;
+    margin-left: 0 !important;
+    margin-bottom: 7px;
+    margin-top: 1vh !important;
+}
+.filterHead{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 18px;
+    color: #000000;
+    margin: 1px 8px 0 !important;
+}
+.filter{
+    display: flex !important;
+}
+.mob{
+    flex-flow: row wrap !important;
+}
+.filter button {
+    background: #D8DFF3 !important;
+}
+.filterList{
+    margin: 0 !important;
+    padding-left: 20px !important;
+    padding-right: 10px !important;
+    display: flex;
+    flex-flow: row wrap !important;
+}
+.filterList li{
+    font-size: 13px;
+    color: #000000;
+    list-style: none;
+    margin: 0 2px;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba(196, 196, 196, 0.3);
+    border-radius: 30px;
+    padding: 6px 4px 5px 10px;
+}
+.filterList li a{
+    color: #000000 !important;
+}
+.filterList li span{
+    font-weight: 600;
+    font-size: 13px;
+    color: #000000;
+    text-transform: capitalize;
+}
+.clearbtn{
+    margin: 4px !important;
+}
+.toggleStyle form{
+    display: flex !important;
+}
+.ui.toggle.checkbox input:checked~.box:before, .ui.toggle.checkbox input:checked~label:before{
+    background-color: #3DC2C2 !important;
+}
+.ui.grid>.row{
+    padding: 8px 0 !important;
+}
+.ui.radio.checkbox .box, .ui.radio.checkbox label{
+    padding: 0 !important;
+}
+.ui.radio.checkbox .box:before, .ui.radio.checkbox label:before{
+    top: 23px !important;
+    left: 3px !important;
+}
+.ui.radio.checkbox .box:after, .ui.radio.checkbox label:after{
+    top: 23px !important;
+    left: 3px !important;
+}
+.ui.checkbox .box:before, .ui.checkbox label:before{
+    border: 1px solid #3DC2C2 !important;
+}
+.ui.checkbox input:checked~.box:before, .ui.checkbox input:checked~label:before{
+    border-color: #3DC2C2 !important;
+}
+.ui.radio.checkbox input:checked~.box:after, .ui.radio.checkbox input:checked~label:after{
+    background-color: #3DC2C2 !important;
+}
+.ui.form .field{
+    padding: 0 6px;
+    color: #483E3E;
+    font-size: 11px;
+}
+.dom .ui.radio.checkbox label:before{
+    left: 8px !important;
+}
+.dom .ui.radio.checkbox label:after {
+    left: 8px !important;
+}

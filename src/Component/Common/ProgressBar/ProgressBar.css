@@ -1,0 +1,13 @@
+
+
+.progressHead{
+    margin-top: 3px;
+}
+.progressBar{
+    margin: 0px !important;
+}
+.progress{
+    display: flex !important;
+    color: #4C4D4C;
+    font-size: 11px;
+}

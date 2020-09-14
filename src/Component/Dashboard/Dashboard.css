@@ -1,0 +1,9 @@
+.dashboard{
+    /* margin-top: 1.5rem; */
+    padding: 0 10px 10px 10px;
+}
+.fixedTabs{
+    position: fixed;
+    width: 95%;
+    background: #fbffff !important;
+}
