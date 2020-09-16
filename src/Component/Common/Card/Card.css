@@ -46,10 +46,10 @@ h5{
     width: 11vw; */
 }
 .small .chart{
-    height: 7rem;
+    height: 8.5rem;
 }
 .large .chart, .medium .chart, .superlarge .chart{
-    height: 23rem;
+    height: 26.9rem;
 }
 .progressLine{
     line-height: 1.5;

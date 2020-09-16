@@ -16,7 +16,7 @@ class Satisfaction extends Component {
   }
   render() {
     return (
-     <ResponsiveDashboard tab={this.state.tab}/>
+     <ResponsiveDashboard tab={this.state.tab} tabName="satisfaction"/>
     );
   }
 }

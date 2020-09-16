@@ -17,7 +17,7 @@ const Maintab = props => {
             <MenuItem click={props.menuClickHandler} view='tabcom'/>
           </Sidebar>
         </Responsive> 
-        <Responsive as={Menu} {...Responsive.onlyTablet } className="theme_header tabItem">
+        <Responsive as={Menu} {...Responsive.onlyTablet } className="theme_header">
           <Sidebar as={Menu}
           animation='overlay'
           icon='labeled'

@@ -3,6 +3,7 @@ import './SubTab.css';
 import { Menu } from 'semantic-ui-react';
 import Settings from '../../../assets/imgs/settings.png';
 import user from '../../../assets/imgs/user.svg';
+import { BrowserRouter as Switch, Link } from 'react-router-dom';
 
 class SubTab extends Component {
     constructor(props) {
@@ -21,10 +22,10 @@ class SubTab extends Component {
         const pageName = window.location.pathname.substring(1).split('_').join(" ");
         return (
             <div className="subtabDiv">
-                <h4 className={`pageHead ${window.location.pathname === "/initiative_overview" || window.location.pathname === "/visitation_analytics"?'setWidth':''}`}>{pageName}</h4>
+                <h4 className={`pageHead ${this.props.tabName === "initiative_overview" || this.props.tabName === "visitation_analytics"?'setWidth':''}`}>{this.props.tabName.split('_').join(" ")}</h4>
                 <Menu pointing secondary className="subTab">
                     {subItemList.map((subtab) => {
-                        return <Menu.Item key={subtab.value} name={subtab.value} active={activeItem === subtab.value} onClick={this.handleItemClick}/>
+                        return <Menu.Item key={subtab.value} as={Link} name={subtab.value} active={activeItem === subtab.value} onClick={this.handleItemClick} to={`/${this.props.tabName}/${subtab.value}`}/>
                     })}
                 </Menu>
                 <div className="toolbar_navigation-items">

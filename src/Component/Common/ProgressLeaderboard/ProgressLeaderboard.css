@@ -1,0 +1,21 @@
+.progressHead{
+    margin-top: 3px;
+}
+.progressBar{
+    margin: 0px !important;
+}
+.redCol .bar{
+    background-color: #EE8181 !important;
+}
+.orangeCol .bar{
+    background: #FFB86C !important;
+}
+.green1Col .bar{
+    background: #389741 !important;
+}
+.green2Col .bar{
+    background: #34B53A !important;
+}
+.green3Col .bar{
+    background: #80D184 !important;
+}

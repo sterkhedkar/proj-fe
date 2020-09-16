@@ -14,7 +14,7 @@ class VisitationAnalytics extends Component {
   }
   render() {
     return (
-     <ResponsiveDashboard tab={this.state.tab}/>
+     <ResponsiveDashboard tab={this.state.tab} tabName="visitation_analytics"/>
     );
   }
 }

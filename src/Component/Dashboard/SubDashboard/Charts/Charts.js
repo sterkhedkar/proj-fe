@@ -13,7 +13,7 @@ const cards = [
             img: 'nps',
             type: 'keyMatrix',
             status: 'enable',
-            chartType:'',
+            chartType:'line',
         },
         {
             size: 'small',
@@ -22,7 +22,7 @@ const cards = [
             img: 'repeat_visit',
             type: 'keyMatrix',
             status: 'enable',
-            chartType:'',
+            chartType:'line',
         },
         {
             size: 'small',
@@ -31,7 +31,7 @@ const cards = [
             img: 'compliance',
             type: 'keyMatrix',
             status: 'enable',
-            chartType:'',
+            chartType:'line',
         },
         {
             size: 'small',
@@ -40,7 +40,7 @@ const cards = [
             img: 'visitation',
             type: 'keyMatrix',
             status: 'disable',
-            chartType:'',
+            chartType:'line',
         },
         {
             size: 'small',
@@ -49,15 +49,16 @@ const cards = [
             img: 'spend',
             type: 'keyMatrix',
             status: 'disable',
-            chartType:'',
+            chartType:'line',
         },
         {
             size: 'large',
-            cardName: 'Satisfaction & Compliance Landerboard (%)',
+            cardName: 'Satisfaction & Compliance Leaderboard (%)',
             aux: 'select',
             type: 'chart',
             status: 'disable',
-            chartType:'',
+            options: [{ key: 'destination', value: 'destination', text: 'Destination' },{ key: 'destination', value: 'destination', text: 'Destination' },],
+            chartType:'leaderboard',
         },
         {
             size: 'medium',
@@ -65,7 +66,7 @@ const cards = [
             aux: '',
             type: 'chart',
             status: 'disable',
-            chartType:'',
+            chartType:'bubble',
         },
         {
             size: 'superlarge',
@@ -73,7 +74,7 @@ const cards = [
             aux: '',
             type: 'chart',
             status: 'disable',
-            chartType:'',
+            chartType:'bubble',
         },
         {
             size: 'superlarge',
@@ -81,7 +82,7 @@ const cards = [
             aux: '',
             type: 'chart',
             status: 'disable',
-            chartType:'',
+            chartType:'pie',
         },
 ];
 const Charts = props => {  
@@ -94,21 +95,21 @@ const Charts = props => {
             <Responsive {...Responsive.onlyComputer } className={chartClasses}>
                 <div className="grid-container">
                     {cards.map(card => (
-                        <Card key={card.cardName} data={card}/> 
+                        <Card key={card.cardName} size={card.size} data={card}/> 
                     ))}
                 </div>
             </Responsive>
             <Responsive {...Responsive.onlyTablet} className={chartClasses}>
                 <div className="grid-container">
                     {cards.map(card => (
-                        <Card key={card.cardName} size={card.size} cardName={card.cardName}/> 
+                        <Card key={card.cardName} size={card.size} data={card}/> 
                     ))}
                 </div>
             </Responsive>
             <Responsive {...Responsive.onlyMobile } className="chartDivMob">
                 <div className="grid-container">
                     {cards.map(card => (
-                        <Card key={card.cardName} size='large' cardName={card.cardName}/> 
+                        <Card key={card.cardName} size='superlarge' data={card}/> 
                     ))}
                 </div>
             </Responsive>

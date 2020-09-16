@@ -76,21 +76,20 @@ class Filter extends Component {
                 </Responsive>
                 <Responsive {...Responsive.onlyTablet }>
                     <Grid className="filterDiv">
-                    <Grid.Row>
+                        <Grid.Row>
                             <Grid.Column width={14} className="filter">
                                 <p className="filterHead">Filter By :</p>
                                 
-                                <AddFilter getFilterData={this.handleFilterData}/>
+                                <AddFilter getFilterData={this.handleFilterData} {...this.state.filterData}/>
                                 <ul className="filterList">
-                                    
                                     {Object.keys(filterList).map((key, i) => (
                                         <li key={i}>
-                                            <span>{key} : </span> {filterList[key]}
-                                            <a><Icon name='close' /></a>
+                                            <span value={key}>{key} : </span> {filterList[key]}
+                                            <a><Icon name='close' onClick={this.clearFilter}/></a>
                                         </li>
                                     ))}
                                 </ul>
-                                <a className="clearbtn">Clear All</a>
+                                {clearAll}
                             </Grid.Column>
                             <Grid.Column width={2} className="toggleStyle">
                                 <Form>
@@ -129,17 +128,16 @@ class Filter extends Component {
                             <Grid.Column className="filter mob">
                                 <p className="filterHead">Filter By :</p>
                                 
-                                <AddFilter getFilterData={this.handleFilterData}/>
+                                <AddFilter getFilterData={this.handleFilterData} {...this.state.filterData}/>
                                 <ul className="filterList">
-                                    
                                     {Object.keys(filterList).map((key, i) => (
                                         <li key={i}>
-                                            <span>{key} : </span> {filterList[key]}
-                                            <a><Icon name='close' /></a>
+                                            <span value={key}>{key} : </span> {filterList[key]}
+                                            <a><Icon name='close' onClick={this.clearFilter}/></a>
                                         </li>
                                     ))}
                                 </ul>
-                                <a className="clearbtn">Clear All</a>
+                                {clearAll}
                             </Grid.Column>
                         </Grid.Row>
                     </Grid>

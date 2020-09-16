@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseUrl = `https://jsonplaceholder.typicode.com/`;
+const baseUrl = `http://localhost:8000`;
 let res;
 export const getMethod = async(props) =>{
     try{

@@ -5,9 +5,6 @@
 .mainDiv{
     display: flex;
 }
-.mobileV{
-    padding-top: 11.2rem !important;
-}
 .interventionsDiv{
     width: 2%;
     height: 83vh;

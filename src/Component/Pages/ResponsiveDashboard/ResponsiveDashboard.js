@@ -23,7 +23,7 @@ class ResponsiveDashboard extends Component {
     return (
       <>
         <Responsive {...Responsive.onlyComputer }>
-          <Dashboard tab={this.props.tab}/>
+          <Dashboard tab={this.props.tab} tabName={this.props.tabName}/>
         </Responsive>
         <Responsive {...Responsive.onlyTablet }>
           <Dashboard tab={this.props.tab}/>

@@ -1,4 +1,5 @@
 import React from 'react'
+import './AddFilter.css';
 import { Button, Modal, Grid, Dropdown } from 'semantic-ui-react';
 import Add from '../../../../assets/imgs/add.svg';
 
@@ -47,7 +48,6 @@ const friendOptions = [
   },
 ]
 
-// function AddFilter() {
 const AddFilter = props => {
   const initialFormData = {
     destination: "",
@@ -149,8 +149,8 @@ const AddFilter = props => {
                     </Grid>
                 </Modal.Content>
                 <Modal.Actions>
-                    <Button  basic color='blue' onClick={() => dispatch({ type: 'CLOSE_MODAL' })} >Cancel</Button>
-                    <Button primary onClick={handleSubmit}> Apply </Button>
+                    <Button  basic className="buttonPadding" onClick={() => dispatch({ type: 'CLOSE_MODAL' })} >Cancel</Button>
+                    <Button primary className="theme_header buttonPadding" onClick={handleSubmit}> Apply </Button>
                 </Modal.Actions>
         </Modal>
     </>

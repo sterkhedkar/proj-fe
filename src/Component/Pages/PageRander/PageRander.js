@@ -20,12 +20,13 @@ class PageRander extends Component {
                     this.props.selectedmenu === 'visitation_analytics'?<VisitationAnalytics />:<InitiativeOverview />
                 } */}
                   <Route exact path="/" component={()=> <Login/>}/>
-                <Route exact path="/map" component={()=> <Map/>}/>
+                <Route   path="/map" component={()=> <Map/>}/>
                 <Protect path="/home" component={()=> <Home/>}/>
                 <Protect path="/satisfaction" component={()=> <Satisfaction/>}/>
                 <Protect path="/compliance" component={()=> <Compliance />}/>
                 <Protect path="/visitation_analytics" component={()=> <VisitationAnalytics />}/>
                 <Protect path="/initiative_overview" component={()=> <InitiativeOverview />}/>
+                <Route path="/home/overview" component={()=> <Map/>}/>
             </>
         );
     }

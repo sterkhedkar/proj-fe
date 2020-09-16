@@ -1,0 +1,44 @@
+.tableLeaderboard .ui.table td{
+    padding: .5em .78571429em !important;
+}
+.tableLeaderboard .ui.table thead th{
+    padding: .5em .78571429em !important;
+    border-bottom: none;
+}
+
+.tableLeaderboard .ui.sortable.table thead th{
+    border-left: none !important;
+}
+.tableLeaderboard .ui.table thead tr:first-child > th {
+    position: sticky !important;
+    top: 0;
+    z-index: 2;
+    background: #ffffff;
+    color: #808080 !important;
+}
+.tableLeaderboard .ui.table tfoot tr:first-child > td {
+    position: sticky !important;
+    bottom: 0;
+    z-index: 2;
+    background: #ffffff;
+    color: #808080 !important;
+    padding: 0px !important;
+}
+.tableLeaderboard .ui.basic.table tbody tr:nth-child(1n){
+    background-color: rgba(247, 243, 243, 0.5) !important;
+}
+.tableLeaderboard .ui.basic.table tbody tr:nth-child(2n){
+    background-color: #ffffff !important;
+}
+.tableLeaderboard .ui.table tr td{
+    border-top: none !important;
+}
+.dataval{
+    float: right;
+}
+.tabcell{
+    display: flex;
+}
+.deltaImg{
+    margin: 0px 0px 7px 5px !important;
+}

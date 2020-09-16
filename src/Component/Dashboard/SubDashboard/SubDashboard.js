@@ -41,18 +41,20 @@ class SubDashboard extends Component {
                 <Responsive {...Responsive.onlyTablet }>
                     <div className="subDashboard">
                         <div className="mainDiv">
-                            <Charts/>
+                            <Charts chartHandler={this.state.interventionDetailOpen}/>
                             <div className={`interventionsDiv ${this.state.interventionDetailOpen ? 'interventionChange' :''}`}>
-                                <Interventions interventionClickHandler={this.interventionToggleClickHandler}/>
-                                <InterventionsDetail show={this.state.interventionDetailOpen} />
+                                <div className="interventionDetail">
+                                    <Interventions interventionClickHandler={this.interventionToggleClickHandler}/>
+                                    <InterventionsDetail show={this.state.interventionDetailOpen} />
+                                </div>
                             </div>
                         </div>
                     </div>
                 </Responsive> 
                 <Responsive {...Responsive.onlyMobile }>
-                    <div className="subDashboard mobileV">
+                    <div className="subDashboard">
                         <div className="mainDiv">
-                            <Charts/>
+                            <Charts chartHandler={this.state.interventionDetailOpen}/>
                         </div>
                     </div>
                 </Responsive> 

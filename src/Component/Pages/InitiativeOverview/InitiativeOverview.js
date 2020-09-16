@@ -14,7 +14,7 @@ class InitiativeOverview extends Component {
   }
   render() {
     return (
-     <ResponsiveDashboard tab={this.state.tab}/>
+     <ResponsiveDashboard tab={this.state.tab} tabName="initiative_overview"/>
     );
   }
 }

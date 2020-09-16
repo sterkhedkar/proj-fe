@@ -7,23 +7,16 @@ import Home from '../../../assets/imgs/home.svg';
 import Satisfaction from '../../../assets/imgs/satisfaction.svg';
 import Compliance from '../../../assets/imgs/compliance.svg';
 import VisitationAnalytics from '../../../assets/imgs/visitation_analytics.svg';
-import InitiativeOverview from '../../../assets/imgs/Initiative_overview.png';
+import InitiativeOverview from '../../../assets/imgs/Initiative_overview.svg';
 import HomeActive from '../../../assets/imgs/home_active.svg';
 import SatisfactionActive from '../../../assets/imgs/satisfaction_active.svg';
 import ComplianceActive from '../../../assets/imgs/compliance_active.svg';
 import VisitationAnalyticsActive from '../../../assets/imgs/visitation_analytics_active.svg';
-import InitiativeOverviewActive from '../../../assets/imgs/Initiative_overview_active.png';
+import InitiativeOverviewActive from '../../../assets/imgs/Initiative_overview_active.svg';
 import { useLocation } from 'react-router-dom';
 
 
 const MenuItem = props => {
-// class MenuItem extends Component { 
-  // render(){ 
-    const handleClick = (e) => {
-      console.log("e : ", e.target.dataset);
-      props.onClick("logo");
-    }
-    console.log("fullSidebar : ",props.fullSidebar);
 
     const location = useLocation();
     
@@ -55,7 +48,6 @@ const MenuItem = props => {
           </Menu.Item>
         </>
     );
-  // }
 }
     
 export default MenuItem   

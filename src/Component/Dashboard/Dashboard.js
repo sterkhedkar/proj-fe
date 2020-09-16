@@ -27,7 +27,7 @@ class Dashboard extends Component {
         <>
         <Responsive {...Responsive.onlyComputer }>
             <div className="dashboard">
-                <SubTab tab={this.props.tab} /> 
+                <SubTab tab={this.props.tab} tabName={this.props.tabName}/> 
                 <Filter /> 
                 <SubDashboard />
             </div>

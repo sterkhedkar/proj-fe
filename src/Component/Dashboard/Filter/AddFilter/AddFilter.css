@@ -1,0 +1,7 @@
+.ui.modal>.header{
+    border-bottom: none !important;
+}
+.ui.modal>.actions{
+    border-top: none !important;
+    background: transparent !important; 
+}
