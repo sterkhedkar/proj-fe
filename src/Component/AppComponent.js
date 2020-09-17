@@ -46,10 +46,10 @@ class AppComponent extends Component {
             RenderNav = <PageRander />
         }
         else{
-            RenderNav = <><Maintab menuClickHandler={this.selectedMenuClickHandler} />
+            RenderNav = <div style={{ marginLeft: '3.8rem' }}><Maintab menuClickHandler={this.selectedMenuClickHandler} />
                         <SideDrawer show={this.state.sideDrawerOpen} />
                         {backdrop}
-                        <PageRander /></>
+                        <PageRander /></div>
         }
         // <Header drawerClickHandler={this.drawerToggleClickHandler} />
         // <SideDrawer show={this.state.sideDrawerOpen}/>
@@ -57,7 +57,7 @@ class AppComponent extends Component {
         return (
             <div className="main">
 
-                <Responsive {...Responsive.onlyComputer} style={{ marginLeft: '3.8rem' }}>
+                <Responsive {...Responsive.onlyComputer}>
                     {console.log("path",window.location.pathname)}
                     <main>
                         
