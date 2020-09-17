@@ -1,11 +1,19 @@
 import React, {Component}from 'react'; 
-import './Home.css';
 import ResponsiveDashboard from '../ResponsiveDashboard/ResponsiveDashboard';
 
 const subTab = [{name:'Overview', value:'overview'},{name:'Destination Navigator', value:'destination_navigator'},{name:'Comparative Dashboard', value:'comparative_dashboard'},{name:'News Feed', value:'news_feed'},];
 const cards = [
   {
-      size: 'small',
+      size: 'large1',
+      cardName: 'Destination & Site Map',
+      aux: 'select',
+      type: 'chart',
+      status: 'enable',
+      options: [{ key: 'compliance', value: 'compliance', text: 'Compliance' },{ key: 'satisfaction', value: 'satisfaction', text: 'Satisfaction' },],
+      chartType:'workinprogress',
+  },
+  {
+      size: 'medium1',
       cardName: 'NPS',
       aux: 'img',
       img: 'nps',
@@ -14,16 +22,7 @@ const cards = [
       chartType:'line',
   },
   {
-      size: 'small',
-      cardName: 'Repeat Visit (%)',
-      aux: 'img',
-      img: 'repeat_visit',
-      type: 'keyMatrix',
-      status: 'enable',
-      chartType:'line',
-  },
-  {
-      size: 'small',
+      size: 'medium1',
       cardName: 'Compliance (%)',
       aux: 'img',
       img: 'compliance',
@@ -32,7 +31,16 @@ const cards = [
       chartType:'line',
   },
   {
-      size: 'small',
+      size: 'medium1',
+      cardName: 'Repeat Visit (%)',
+      aux: 'img',
+      img: 'repeat_visit',
+      type: 'keyMatrix',
+      status: 'enable',
+      chartType:'line',
+  },
+  {
+      size: 'medium1',
       cardName: 'Visitation',
       aux: 'img',
       img: 'visitation',
@@ -41,49 +49,31 @@ const cards = [
       chartType:'line',
   },
   {
-      size: 'small',
-      cardName: 'Spend (SAR)',
-      aux: 'img',
-      img: 'spend',
-      type: 'keyMatrix',
-      status: 'disable',
-      chartType:'line',
-  },
-  {
-      size: 'large',
-      cardName: 'Satisfaction & Compliance Leaderboard (%)',
-      aux: 'select',
-      type: 'chart',
-      status: 'disable',
-      options: [{ key: 'destination', value: 'destination', text: 'Destination' },{ key: 'segment', value: 'segment', text: 'Segment' },],
-      chartType:'leaderboard',
-  },
-  {
-      size: 'medium',
-      cardName: 'CSAT by Driver (%)',
-      aux: '',
-      type: 'chart',
-      status: 'disable',
-      chartType:'workinprogress',
-  },
-  {
       size: 'superlarge',
-      cardName: 'CSAT by Offering (%)',
-      aux: '',
+      cardName: 'Customer Satisfaction and Compliance by Offering (%)',
+      aux: 'radio',
       type: 'chart',
-      status: 'disable',
+      status: 'enable',
       chartType:'bubble',
   },
   {
-      size: 'superlarge',
-      cardName: 'Key Initiatives',
+      size: 'large2',
+      cardName: 'Site Visitation, Satisfaction & Compliance Leaderboard',
       aux: '',
       type: 'chart',
-      status: 'disable',
+      status: 'enable',
+      chartType:'leaderboard',
+  },
+  {
+      size: 'medium2',
+      cardName: 'Tourist Attraction Compliance by Category',
+      aux: '',
+      type: 'chart',
+      status: 'enable',
       chartType:'workinprogress',
   },
 ];
-class Home extends Component {
+class HomeDestination extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -102,4 +92,4 @@ class Home extends Component {
   }
 }
 
-export default Home   
+export default HomeDestination   

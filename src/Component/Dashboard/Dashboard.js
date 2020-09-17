@@ -29,21 +29,21 @@ class Dashboard extends Component {
             <div className="dashboard">
                 <SubTab tab={this.props.tab} tabName={this.props.tabName}/> 
                 <Filter /> 
-                <SubDashboard />
+                <SubDashboard cards={this.props.cards}/>
             </div>
         </Responsive>
         <Responsive {...Responsive.onlyTablet }>
-            <div className="dashboard">
-                <SubTab tab={this.props.tab} /> 
+            <div className="dasboard">
+                <SubTab tab={this.props.tab} tabName={this.props.tabName}/> 
                 <Filter /> 
-                <SubDashboard />
+                <SubDashboard cards={this.props.cards}/>
             </div>
         </Responsive>
         <Responsive {...Responsive.onlyMobile }>
             <div className="dashboard">
-                <SubTab tab={this.props.tab} /> 
+                <SubTab tab={this.props.tab} tabName={this.props.tabName}/> 
                 <Filter /> 
-                <SubDashboard />
+                <SubDashboard cards={this.props.cards}/>
             </div>
         </Responsive>
         </>

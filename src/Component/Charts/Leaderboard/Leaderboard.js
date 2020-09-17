@@ -1,21 +1,28 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './Leaderboard.css';
 import HomeLeaderboard from './HomeLeaderboard/HomeLeaderboard';
-import { useLocation } from 'react-router-dom';
+import DestinationLeaderboard from './DestinationLeaderboard/DestinationLeaderboard';
 
-
-const Leaderboard = props => { 
-
-    // let leaderboardComp;
-    // const location = useLocation();
-    // if(location.pathname === '/home'){
-    //     leaderboardComp = <HomeLeaderboard data={props.data}/>
-    // }
+class Leaderboard extends Component {
+    constructor(props) {
+        super(props);
+    }
     
-    return  (
-            <HomeLeaderboard data={props.data}/>
-            // {leaderboardComp}
-    )
+    render(){
+        let leaderboardComp;
+        
+        if(this.props.cardName === 'Satisfaction & Compliance Leaderboard (%)'){
+            leaderboardComp = <HomeLeaderboard data={this.props.data}/>
+        } else if(this.props.cardName === 'Site Visitation, Satisfaction & Compliance Leaderboard'){
+            leaderboardComp = <DestinationLeaderboard data={this.props.data}/>
+        }
+        
+        return  (
+            <>
+                {leaderboardComp}
+            </>
+        )
+    }
 }
 
 export default Leaderboard

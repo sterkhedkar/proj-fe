@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Home from '../Home/Home';
+import HomeDestination from '../HomeDestination/HomeDestination';
 import Satisfaction from '../Satisfaction/Satisfaction';
 import Compliance from '../Compliance/Compliance';
 import VisitationAnalytics from '../VisitationAnalytics/VisitationAnalytics';
@@ -13,20 +14,15 @@ class PageRander extends Component {
     render(){
         return(
             <>
-                {/* {
-                    this.props.selectedmenu === 'home'?<Home/>: 
-                    this.props.selectedmenu === 'satisfaction'?<Satisfaction/>:
-                    this.props.selectedmenu === 'compliance'?<Compliance />:
-                    this.props.selectedmenu === 'visitation_analytics'?<VisitationAnalytics />:<InitiativeOverview />
-                } */}
+               
                   <Route exact path="/" component={()=> <Login/>}/>
                 <Route   path="/map" component={()=> <Map/>}/>
-                <Protect path="/home" component={()=> <Home/>}/>
                 <Protect path="/satisfaction" component={()=> <Satisfaction/>}/>
                 <Protect path="/compliance" component={()=> <Compliance />}/>
                 <Protect path="/visitation_analytics" component={()=> <VisitationAnalytics />}/>
                 <Protect path="/initiative_overview" component={()=> <InitiativeOverview />}/>
-                <Route path="/home/overview" component={()=> <Map/>}/>
+                <Protect path="/home/overview" component={()=> <Home/>}/>
+                <Protect path="/home/destination_navigator" component={()=> <HomeDestination/>}/>
             </>
         );
     }

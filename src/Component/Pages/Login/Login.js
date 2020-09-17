@@ -24,7 +24,7 @@ class Login extends Component {
     }
     render() {
         if (this.state.redirect === true) {
-            return <Redirect to="/home" />
+            return <Redirect to="/home/overview" />
         }
         return (<>
             <div className="dashboard">

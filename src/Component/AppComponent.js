@@ -1,17 +1,17 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './AppComponent.css'
 import { BrowserRouter as Switch, Route } from 'react-router-dom';
 import { Responsive } from 'semantic-ui-react';
 
 import Header from './Header/Header'
 import Maintab from './Maintab/Maintab'
-import SideDrawer from './Header/SideDrawer/SideDrawer'; 
+import SideDrawer from './Header/SideDrawer/SideDrawer';
 import Backdrop from './Header/Backdrop/Backdrop';
 
 import PageRander from './Pages/PageRander/PageRander';
 
- 
-class AppComponent extends Component { 
+
+class AppComponent extends Component {
     state = {
         sideDrawerOpen: false,
         selectedmenu: false,
@@ -19,58 +19,74 @@ class AppComponent extends Component {
 
     drawerToggleClickHandler = () => {
         this.setState((prevState) => {
-            return {sideDrawerOpen: !prevState.sideDrawerOpen};
+            return { sideDrawerOpen: !prevState.sideDrawerOpen };
         });
     };
 
     selectedMenuClickHandler = () => {
         this.setState((prevState) => {
-            return {sideDrawerOpen: !prevState.sideDrawerOpen};
+            return { sideDrawerOpen: !prevState.sideDrawerOpen };
         });
         // this.setState({selectedmenu:data.menuname});
     };
 
     backdropClickHandler = () => {
-        this.setState({sideDrawerOpen: false});
+        this.setState({ sideDrawerOpen: false });
     };
 
-    render(){ 
+    render() {
         let backdrop;
+
+        if (this.state.sideDrawerOpen) {
+            backdrop = <Backdrop click={this.backdropClickHandler} />
+        }
         
-        if(this.state.sideDrawerOpen){ 
-            backdrop = <Backdrop click={this.backdropClickHandler}/>
+        let RenderNav;
+        if(window.location.pathname == "/"){
+            RenderNav = <PageRander />
+        }
+        else{
+            RenderNav = <><Maintab menuClickHandler={this.selectedMenuClickHandler} />
+                        <SideDrawer show={this.state.sideDrawerOpen} />
+                        {backdrop}
+                        <PageRander /></>
         }
         // <Header drawerClickHandler={this.drawerToggleClickHandler} />
         // <SideDrawer show={this.state.sideDrawerOpen}/>
         // {backdrop} 
-        return  (
+        return (
             <div className="main">
-                
-                <Responsive {...Responsive.onlyComputer } style={{marginLeft: '3.8rem'}}>
+
+                <Responsive {...Responsive.onlyComputer} style={{ marginLeft: '3.8rem' }}>
+                    {console.log("path",window.location.pathname)}
                     <main>
-                        <Maintab menuClickHandler={this.selectedMenuClickHandler}/>
-                        <SideDrawer show={this.state.sideDrawerOpen}/>
-                        {backdrop} 
-                        <PageRander/>
+                        
+                        {/* <Maintab menuClickHandler={this.selectedMenuClickHandler} />
+                        <SideDrawer show={this.state.sideDrawerOpen} />
+                        {backdrop}
+                        <PageRander /> */}
+                        {RenderNav}
                     </main>
                 </Responsive>
-                <Responsive {...Responsive.onlyTablet } style={{marginLeft: '3.8rem'}}>
+                <Responsive {...Responsive.onlyTablet} style={{ marginLeft: '3.8rem' }}>
                     <main>
-                        <Maintab menuClickHandler={this.selectedMenuClickHandler}/>
-                        <SideDrawer show={this.state.sideDrawerOpen}/>
-                        {backdrop} 
-                        <PageRander/>
+                        {/* <Maintab menuClickHandler={this.selectedMenuClickHandler} />
+                        <SideDrawer show={this.state.sideDrawerOpen} />
+                        {backdrop}
+                        <PageRander /> */}
+                        {RenderNav}
                     </main>
                 </Responsive>
-                <Responsive {...Responsive.onlyMobile } style={{marginLeft: '3.8rem'}}>
+                <Responsive {...Responsive.onlyMobile} style={{ marginLeft: '3.8rem' }}>
                     <main>
-                        <Maintab menuClickHandler={this.selectedMenuClickHandler}/>
-                        <SideDrawer show={this.state.sideDrawerOpen}/>
-                        {backdrop} 
-                        <PageRander/>
+                        {/* <Maintab menuClickHandler={this.selectedMenuClickHandler} />
+                        <SideDrawer show={this.state.sideDrawerOpen} />
+                        {backdrop}
+                        <PageRander /> */}
+                        {RenderNav}
                     </main>
                 </Responsive>
-                
+
             </div>
         );
     }
@@ -85,6 +101,6 @@ export default AppComponent
                     //     <Route path='/initiative_overview' component={InitiativeOverview} />
                     // </Switch>
 
-                    
+
                     // <p>{this.selectedmenu}</p>
                     // <PageRander selectedmenu={this.selectedmenu}/>

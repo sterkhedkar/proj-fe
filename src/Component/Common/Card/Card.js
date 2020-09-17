@@ -5,6 +5,7 @@ import BubbleChart from '../../Charts/BubbleChart/BubbleChart';
 import LineChart from '../../Charts/LineChart/LineChart';
 import Auxiliary from '../../Common/Auxiliary/Auxiliary';
 import Leaderboard from '../../Charts/Leaderboard/Leaderboard';
+import Inprogress from '../../Charts/Inprogress/Inprogress';
 
 import {getMethod} from '../API/Api';
 
@@ -65,28 +66,48 @@ class Card extends Component {
                             {progress}
                         </div>
         }
-        
-        if(this.props.data.chartType == 'bubble'){
+        if(this.props.data.chartType == 'workinprogress'){
+            showChart = <Inprogress/>
+        }else if(this.props.data.chartType == 'bubble'){
             showChart = <BubbleChart size={this.props.size} resize={this.chartResize} />
         } else if(this.props.data.chartType == 'line'){
             showChart = <LineChart />
         } else if(this.props.data.chartType == 'leaderboard'){
-            const data = {
-                head:['NPS','Repeat Visit','Compliance'],
-                data:[
-                    {key:"tabuk", "NPS":{value:"86", delta:'positive'},"Repeat_Visit":{value:"91", delta:'positive'},"Compliance":{value:"63", delta:'positive'}},
-                    {key:"Umluj", "NPS":{value:"69", delta:'negative'},"Repeat_Visit":{value:"73", delta:'negative'},"Compliance":{value:"52", delta:'negative'}},
-                    {key:"Abha", "NPS":{value:"68", delta:'negative'},"Repeat_Visit":{value:"86", delta:'negative'},"Compliance":{value:"67", delta:'negative'}},
-                    {key:"Jeddah", "NPS":{value:"46", delta:'negative'},"Repeat_Visit":{value:"52", delta:'negative'},"Compliance":{value:"72", delta:'negative'}},
-                    {key:"Al Baha", "NPS":{value:"28", delta:'negative'},"Repeat_Visit":{value:"49", delta:'negative'},"Compliance":{value:"66", delta:'negative'}},
-                    {key:"Yanbu", "NPS":{value:"27", delta:'negative'},"Repeat_Visit":{value:"49", delta:'negative'},"Compliance":{value:"70", delta:'negative'}},
-                    {key:"KAEC", "NPS":{value:"27", delta:'positive'},"Repeat_Visit":{value:"41", delta:'positive'},"Compliance":{value:"80", delta:'positive'}},
-                    {key:"Tarf", "NPS":{value:"10", delta:'positive'},"Repeat_Visit":{value:"27", delta:'positive'},"Compliance":{value:"62", delta:'positive'}},
-                    {key:"Jizan", "NPS":{value:"10", delta:'positive'},"Repeat_Visit":{value:"26", delta:'positive'},"Compliance":{value:"72", delta:'positive'}}
-                ],
-                color:{"NPS":'green',"Repeat_Visit":'mix',"Compliance":"mix"},
-            };
-            showChart = <Leaderboard data={data}/>
+            let data;
+            if(this.props.data.cardName === 'Satisfaction & Compliance Leaderboard (%)'){
+                data = {
+                    head:['NPS','Repeat Visit','Compliance'],
+                    data:[
+                        {key:"tabuk", "NPS":{value:"86", delta:'positive'},"Repeat_Visit":{value:"91", delta:'positive'},"Compliance":{value:"63", delta:'positive'}},
+                        {key:"Umluj", "NPS":{value:"69", delta:'negative'},"Repeat_Visit":{value:"73", delta:'negative'},"Compliance":{value:"52", delta:'negative'}},
+                        {key:"Abha", "NPS":{value:"68", delta:'negative'},"Repeat_Visit":{value:"86", delta:'negative'},"Compliance":{value:"67", delta:'negative'}},
+                        {key:"Jeddah", "NPS":{value:"46", delta:'negative'},"Repeat_Visit":{value:"52", delta:'negative'},"Compliance":{value:"72", delta:'negative'}},
+                        {key:"Al Baha", "NPS":{value:"28", delta:'negative'},"Repeat_Visit":{value:"49", delta:'negative'},"Compliance":{value:"66", delta:'negative'}},
+                        {key:"Yanbu", "NPS":{value:"27", delta:'negative'},"Repeat_Visit":{value:"49", delta:'negative'},"Compliance":{value:"70", delta:'negative'}},
+                        {key:"KAEC", "NPS":{value:"27", delta:'positive'},"Repeat_Visit":{value:"41", delta:'positive'},"Compliance":{value:"80", delta:'positive'}},
+                        {key:"Tarf", "NPS":{value:"10", delta:'positive'},"Repeat_Visit":{value:"27", delta:'positive'},"Compliance":{value:"62", delta:'positive'}},
+                        {key:"Jizan", "NPS":{value:"10", delta:'positive'},"Repeat_Visit":{value:"26", delta:'positive'},"Compliance":{value:"72", delta:'positive'}}
+                    ],
+                    color:{"NPS":'green',"Repeat_Visit":'mix',"Compliance":"mix"},
+                };
+            } else if(this.props.data.cardName === 'Site Visitation, Satisfaction & Compliance Leaderboard'){
+                data = {
+                    head:['Visitation','Satisfaction','Compliance'],
+                    data:[
+                        {key:"Al Shallal Park 1", "Visitation":{value:"95", delta:'positive'},"Satisfaction":{value:"47", delta:'positive'},"Compliance":{value:"86", delta:'positive'}},
+                        {key:"Al Shallal Park 2", "Visitation":{value:"81", delta:'negative'},"Satisfaction":{value:"47", delta:'negative'},"Compliance":{value:"97", delta:'negative'}},
+                        {key:"Bicycle Ride", "Visitation":{value:"73", delta:'negative'},"Satisfaction":{value:"34", delta:'negative'},"Compliance":{value:"45", delta:'negative'}},
+                        {key:"Fakieh Aquarium", "Visitation":{value:"63", delta:'negative'},"Satisfaction":{value:"30", delta:'negative'},"Compliance":{value:"97", delta:'negative'}},
+                        {key:"Jeddah Middle Corniche", "Visitation":{value:"55", delta:'negative'},"Satisfaction":{value:"42", delta:'negative'},"Compliance":{value:"62", delta:'negative'}},
+                        {key:"Jeddah Waterfront Main", "Visitation":{value:"52", delta:'negative'},"Satisfaction":{value:"33", delta:'negative'},"Compliance":{value:"75", delta:'negative'}},
+                        {key:"Jeddah Waterfront North", "Visitation":{value:"30", delta:'positive'},"Satisfaction":{value:"33", delta:'positive'},"Compliance":{value:"70", delta:'positive'}},
+                        {key:"Jungle Land", "Visitation":{value:"26", delta:'positive'},"Satisfaction":{value:"43", delta:'positive'},"Compliance":{value:"76", delta:'positive'}},
+                        {key:"Vox Cinema", "Visitation":{value:"19", delta:'positive'},"Satisfaction":{value:"100", delta:'positive'},"Compliance":{value:"98", delta:'positive'}}
+                    ],
+                    color:{"Visitation":'mix    ',"Satisfaction":'mix',"Compliance":"mix"},
+                }
+            }
+            showChart = <Leaderboard data={data} cardName={this.props.data.cardName}/>
         }
         
         return (
@@ -96,7 +117,7 @@ class Card extends Component {
                         {aux}
                     </div>
                     {keyMatrix}
-                    <div className="chart" style={{overflow:'auto'}}>
+                    <div className={`chart ${this.props.data.chartType == 'leaderboard'? 'overflowAuto': ''}`}>
                         {showChart}
                     </div>
                 </div>

@@ -16,24 +16,41 @@ h5{
     border-radius: 10px;
 }
 .small {
-    grid-column: span 2;
+    grid-column: span 8;
     grid-row: span 1;
 }
 
 .medium {
-    grid-column: span 3;
+    grid-column: span 12;
     grid-row: span 2;
 }
-
 .large {
-    grid-column: span 7;
+    grid-column: span 28;
     grid-row: span 2;
 }
 
 .superlarge{
+    grid-column: span 40;
+    grid-row: span 1;
+}
+
+.medium1 {
     grid-column: span 10;
+    grid-row: span 1;
+}
+.medium2 {
+    grid-column: span 14;
+    grid-row: span 1;
+}
+.large1 {
+    grid-column: span 20;
     grid-row: span 2;
 }
+.large2 {
+    grid-column: span 26;
+    grid-row: span 1;
+}
+
 
 .scroll{
     height: 4rem;
@@ -45,11 +62,21 @@ h5{
     height: 22vh;
     width: 11vw; */
 }
-.small .chart{
-    height: 8.5rem;
+.overflowAuto{
+    overflow: auto;
 }
-.large .chart, .medium .chart, .superlarge .chart{
-    height: 26.9rem;
+.small .chart{
+    height: 7rem;
+}
+.large .chart, .medium .chart, .superlarge .chart, .large1 .chart, .large2 .chart, .medium2 .chart{
+    height: 21.9rem;
+}
+.large1 .chart{
+    height: 42rem;
+}
+.medium1 .chart{
+    height: 10rem;
+    margin-top: 24px;
 }
 .progressLine{
     line-height: 1.5;

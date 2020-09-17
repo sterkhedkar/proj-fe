@@ -11,21 +11,22 @@ class SubTab extends Component {
         
     }
     
-    state = { activeItem: this.props.tab[0].value };
-
-    handleItemClick = (e, { name }) => this.setState({ activeItem: name })
-
+    // state = { activeItem: this.props.tab[0].value };
+    
+    // handleItemClick = (e) => this.setState({ activeItem: name })
+    // onClick={this.handleItemClick}
 
     render() {
-        const { activeItem } = this.state;
+        let activeItem= window.location.pathname.split('/')[2];
+        // const { activeItem } = this.state;
         const subItemList = this.props.tab;
-        const pageName = window.location.pathname.substring(1).split('_').join(" ");
+        
         return (
             <div className="subtabDiv">
                 <h4 className={`pageHead ${this.props.tabName === "initiative_overview" || this.props.tabName === "visitation_analytics"?'setWidth':''}`}>{this.props.tabName.split('_').join(" ")}</h4>
                 <Menu pointing secondary className="subTab">
                     {subItemList.map((subtab) => {
-                        return <Menu.Item key={subtab.value} as={Link} name={subtab.value} active={activeItem === subtab.value} onClick={this.handleItemClick} to={`/${this.props.tabName}/${subtab.value}`}/>
+                        return <Menu.Item key={subtab.value} as={Link} name={subtab.value} active={activeItem === subtab.value} to={`/${this.props.tabName}/${subtab.value}`}/>
                     })}
                 </Menu>
                 <div className="toolbar_navigation-items">

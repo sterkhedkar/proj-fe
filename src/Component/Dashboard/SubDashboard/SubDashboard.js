@@ -9,6 +9,9 @@ import notification from '../../../assets/imgs/notification.svg';
 
 // function SubDashboard (){ 
 class SubDashboard extends Component { 
+    constructor(props) {
+        super(props);
+    }
     state = {
         interventionDetailOpen: false
     };
@@ -28,7 +31,7 @@ class SubDashboard extends Component {
                 <Responsive {...Responsive.onlyComputer }>
                     <div className="subDashboard">
                         <div className="mainDiv">
-                            <Charts chartHandler={this.state.interventionDetailOpen}/>
+                            <Charts chartHandler={this.state.interventionDetailOpen} cards={this.props.cards}/>
                             <div className={`interventionsDiv ${this.state.interventionDetailOpen ? 'interventionChange' :''}`}>
                                 <div className="interventionDetail">
                                     <Interventions interventionClickHandler={this.interventionToggleClickHandler}/>
@@ -41,7 +44,7 @@ class SubDashboard extends Component {
                 <Responsive {...Responsive.onlyTablet }>
                     <div className="subDashboard">
                         <div className="mainDiv">
-                            <Charts chartHandler={this.state.interventionDetailOpen}/>
+                            <Charts chartHandler={this.state.interventionDetailOpen} cards={this.props.cards}/>
                             <div className={`interventionsDiv ${this.state.interventionDetailOpen ? 'interventionChange' :''}`}>
                                 <div className="interventionDetail">
                                     <Interventions interventionClickHandler={this.interventionToggleClickHandler}/>
@@ -54,7 +57,7 @@ class SubDashboard extends Component {
                 <Responsive {...Responsive.onlyMobile }>
                     <div className="subDashboard">
                         <div className="mainDiv">
-                            <Charts chartHandler={this.state.interventionDetailOpen}/>
+                            <Charts chartHandler={this.state.interventionDetailOpen} cards={this.props.cards}/>
                         </div>
                     </div>
                 </Responsive> 
